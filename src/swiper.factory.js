@@ -42,7 +42,7 @@ function SwiperFactory (Dom7) {
           // Effects
           effect: 'slide', // 'slide' or 'fade' or 'cube' or 'coverflow' or 'flip'
           coverflow: {
-              rotate: 50,
+              rotate: 90,
               stretch: 0,
               depth: 100,
               modifier: 1,
