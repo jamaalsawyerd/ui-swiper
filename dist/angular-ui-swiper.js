@@ -418,12 +418,19 @@ function SwiperFactory (Dom7) {
               s.nextButton = $(s.params.nextButton);
               if (s.params.uniqueNavElements && typeof s.params.nextButton === 'string' && s.nextButton.length > 1 && s.container.find(s.params.nextButton).length === 1) {
                   s.nextButton = s.container.find(s.params.nextButton);
+              }else if(s.params.buttonContainer && $(s.params.buttonContainer).find(s.params.nextButton).length === 1 ){
+                s.nextButton = $(s.params.buttonContainer).find(s.params.nextButton);
               }
           }
           if (s.params.prevButton) {
               s.prevButton = $(s.params.prevButton);
               if (s.params.uniqueNavElements && typeof s.params.prevButton === 'string' && s.prevButton.length > 1 && s.container.find(s.params.prevButton).length === 1) {
+                  if(s.params.buttonContainer){
+                    s.nextButton = $(s.params.buttonContainer.find(s.params.nextButton));
+                  }
                   s.prevButton = s.container.find(s.params.prevButton);
+              }else if(s.params.buttonContainer && $(s.params.buttonContainer).find(s.params.prevButton).length === 1 ){
+                s.prevButton = $(s.params.buttonContainer).find(s.params.prevButton);
               }
           }
       }
